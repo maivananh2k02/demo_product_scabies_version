@@ -5,7 +5,7 @@ class User
 {
     public $pass;
     public $email;
-//    public $passConfirm;
+
     public function __construct($email,$pass )
     {
         $this->email = $email;

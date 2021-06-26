@@ -115,7 +115,7 @@ if (isset($_REQUEST['sort'])) {
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <!--        <th scope="col">Stt</th>-->
+        <th scope="col">Stt</th>
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th class="img" scope="col">Image</th>
@@ -125,7 +125,7 @@ if (isset($_REQUEST['sort'])) {
     <tbody>
     <?php foreach ($result as $key => $product): ?>
         <tr>
-            <!--            <th scope="row">--><?php //echo $product->getId() ?><!--</th>-->
+            <td><?php echo $key + 1 ?></td>
             <td><?php echo $product->getName() ?></td>
             <td><?php echo $product->getPrice() ?></td>
             <td class="img"><img style="width: 300px " src="<?php echo $product->getImg() ?> " alt=""></td>

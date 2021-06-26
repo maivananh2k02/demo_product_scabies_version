@@ -14,7 +14,7 @@ if (isset($_REQUEST['id'])) {
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Add Student</title>
+        <title>Add Product</title>
     </head>
     <body>
     <form method="post">
@@ -29,7 +29,6 @@ if (isset($_REQUEST['id'])) {
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_REQUEST['id'];
     $name = $_REQUEST['name'];
     $price = $_REQUEST['price'];
     $img = $_REQUEST['img'];

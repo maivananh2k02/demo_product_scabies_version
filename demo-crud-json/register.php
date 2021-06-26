@@ -6,16 +6,15 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_REQUEST['email'];
     $pass = $_REQUEST['pass'];
-    Validate::checkPassword($pass);
-}
-if (empty($email) || empty($pass)) {
-    echo '<p class="alert alert-danger" role = "alert" >
+    if (empty($email) || empty($pass)) {
+        echo '<p class="alert alert-danger" role = "alert" >
             incomplete information
         </p>';
-} else {
-    $user = new User($email, $pass);
-    Userdata::addUser($user);
-    header('location:home.php');
+    } else {
+        $user = new User($email, $pass);
+        Userdata::addUser($user);
+        header('location:home.php');
+    }
 }
 ?>
 <!doctype html>
@@ -46,10 +45,8 @@ if (empty($email) || empty($pass)) {
             <label for="exampleInputPassword1">Password</label>
             <input type="password" name="pass" class="form-control" id="exampleInputPassword1"
                    placeholder="Password">
-            <span><?php if (isset($_SESSION['pass'])) {
-                    echo $_SESSION['pass'];
-                    session_destroy();
-                } ?></span>
+            <span><?php Validate::checkPassword($pass);
+                session_destroy(); ?></span>
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
