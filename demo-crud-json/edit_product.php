@@ -18,7 +18,6 @@ if (isset($_REQUEST['id'])) {
     </head>
     <body>
     <form method="post">
-        <input type="text" name="id" placeholder="Input Id" value="<?php echo $product->getId() ?>">
         <input type="text" name="name" placeholder="Input Name" value="<?php echo $product->getName() ?>">
         <input type="text" name="price" placeholder="Input Price" value="<?php echo $product->getPrice() ?>">
         <input type="text" name="img" placeholder="Input Img" value="<?php echo $product->getImg() ?>">
